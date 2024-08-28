@@ -28,6 +28,7 @@ To showcase the trained model, I created a Streamlit application that allows use
 - **Classification**: The app classifies each image using the MobileNetV2 model and shows the predicted class.
 - **Summary Table**: Displays a table of all predictions with the option to download it as an Excel file.
 - **Download Predictions**: Users can download the prediction results as an Excel file for further analysis.
+- **User Interface**: There are 3 images included in the repo for the User Interface of the app before and after uploading an image from each class
 - ### How to Run the Application
 
 1. **Install Dependencies**:
