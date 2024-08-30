@@ -10,7 +10,7 @@ from io import BytesIO
 MODEL_PATH = "F:/intern/second week/model.h5"  
 model = load_model(MODEL_PATH)
 
-# Define class names for your model
+# Define class names for the model
 class_names = np.array(['CaS', 'CoS', 'Gum', 'MC', 'OC', 'OLP', 'OT'])  
 
 # Streamlit app title and description
