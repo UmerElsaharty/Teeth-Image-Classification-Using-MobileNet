@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a deep learning image classification project using various Convolutional Neural Networks (CNNs). I experimented with three different CNN architectures:
+This repository contains a deep learning image classification project using Convolutional Neural Network (CNN).First, I experimented with three different CNN architectures:
 
 - **MobileNetV2**
 - **EfficientNetB0**
