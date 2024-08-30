@@ -6,12 +6,12 @@ import tensorflow as tf
 import pandas as pd
 from io import BytesIO
 
-# Load your pre-trained model
-MODEL_PATH = "F:/intern/second week/model.h5"  # Replace with your model path
+# Load pre-trained model
+MODEL_PATH = "F:/intern/second week/model.h5"  
 model = load_model(MODEL_PATH)
 
 # Define class names for your model
-class_names = np.array(['CaS', 'CoS', 'Gum', 'MC', 'OC', 'OLP', 'OT'])  # Replace with your classes
+class_names = np.array(['CaS', 'CoS', 'Gum', 'MC', 'OC', 'OLP', 'OT'])  
 
 # Streamlit app title and description
 st.title("🦷 Enhanced Dental Diseases Image classification app 🦷")
