@@ -73,9 +73,9 @@ if uploaded_files:
             # Check if all confidence scores are low
             if all(score < low_confidence_threshold for score in confidence_scores):
                 st.warning(f"The model is not confident about the classification for {uploaded_file.name}")
-                st.warning(f"Consider these steps for better results: 
-                1:Upload a clear image 
-                2:Make sure that the image's format is jpg,png and jpeg")
+                st.warning(f"Consider these steps for better results: ")
+                st.warning("1:Upload a clear image ")
+                st.warning("2:Make sure that the image's format is jpg,png and jpeg")
                 
                 predicted_class = "Uncertain"
             
