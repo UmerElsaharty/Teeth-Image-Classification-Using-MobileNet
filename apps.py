@@ -7,6 +7,7 @@ import pandas as pd
 from io import BytesIO
 import requests
 import os
+import xlsxwriter
 # Load pre-trained model
 # MODEL_PATH = "F:/intern/second week/model.h5"  
 # model = load_model(MODEL_PATH)
