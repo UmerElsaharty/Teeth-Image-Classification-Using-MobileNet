@@ -29,7 +29,7 @@ MODEL_URL = 'model.h5'
 
 # Load the model
 model = load_model(MODEL_URL)
-low_confidence_threshold = 0.2
+low_confidence_threshold = 0.8
 
 
 # Define class names for the model
