@@ -29,7 +29,7 @@ MODEL_URL = 'model.h5'
 
 # Load the model
 model = load_model(MODEL_URL)
-low_confidence_threshold = 0.8
+low_confidence_threshold = 0.98
 
 
 # Define class names for the model
@@ -82,7 +82,7 @@ if uploaded_files:
             predictions.append((uploaded_file.name, predicted_class))
 
         # Display the result for each image
-        st.success(f"Predicted Class for {uploaded_file.name}: **{predicted_class}** {confidence}")
+        st.success(f"Predicted Class for {uploaded_file.name}: **{predicted_class}**")
 
     # Convert predictions to a DataFrame
     predictions_df = pd.DataFrame(predictions, columns=["Image Name", "Predicted Class"])
