@@ -63,8 +63,17 @@ if uploaded_files:
         # Prediction
         with st.spinner("Classifying..."):
             prediction = model.predict(image)
-            predicted_class = class_names[np.argmax(prediction)]
-            predictions.append((uploaded_file.name, predicted_class))
+            predicted_class_index = np.argmax(prediction)
+            predicted_class = class_names[predicted_class_index]
+            confidence_scores = prediction[0]
+            confidence = confidence_scores[predicted_class_index]
+            
+            # Check if all confidence scores are low
+            if all(score < low_confidence_threshold for score in confidence_scores):
+                st.warning(f"The model is not confident about the classification for {uploaded_file.name}. Please try a different image.")
+                predicted_class = "Uncertain"
+            
+            predictions.append((uploaded_file.name, predicted_class, confidence))
 
         # Display the result for each image
         st.success(f"Predicted Class for {uploaded_file.name}: **{predicted_class}**")
