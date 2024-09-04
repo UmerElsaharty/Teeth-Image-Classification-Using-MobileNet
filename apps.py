@@ -5,9 +5,24 @@ from PIL import Image, ImageOps
 import tensorflow as tf
 import pandas as pd
 from io import BytesIO
-
+import requests
+import os
 # Load pre-trained model
-MODEL_PATH = "F:/intern/second week/model.h5"  
+# MODEL_PATH = "F:/intern/second week/model.h5"  
+# model = load_model(MODEL_PATH)
+
+
+# Define the URL to download the model file
+MODEL_URL = 'https://github.com/UmerElsaharty/Teeth-Image-Classification-Using-MobileNet/blob/main/model.h5'
+MODEL_PATH = 'models/model.h5'
+
+# Download the model file if it doesn't exist locally
+if not os.path.exists(MODEL_PATH):
+    response = requests.get(MODEL_URL)
+    with open(MODEL_PATH, 'wb') as file:
+        file.write(response.content)
+
+# Load the model
 model = load_model(MODEL_PATH)
 
 # Define class names for the model
