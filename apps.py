@@ -56,6 +56,8 @@ if uploaded_files:
         # Preprocess the image
         size = (224, 224)  # Adjust size based on your model's input size
         image = ImageOps.fit(image, size, Image.LANCZOS)  # Resize the image
+        if image.shape[-1] == 4:  # If the image has an alpha channel, remove it
+            image = image[..., :3]
         image = np.array(image) / 255.0  # Normalize to [0,1]
         image = np.expand_dims(image, axis=0)  # Add batch dimension
 
