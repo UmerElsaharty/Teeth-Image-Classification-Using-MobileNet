@@ -58,6 +58,8 @@ if uploaded_files:
         image = ImageOps.fit(image, size, Image.LANCZOS)  # Resize the image
         if len(image.shape) == 3 and image.shape[-1] == 4:
             image = image[..., :3]
+        st.image(image, caption="Uploaded Image", use_column_width=True)
+
         image = np.array(image) / 255.0  # Normalize to [0,1]
         image = np.expand_dims(image, axis=0)  # Add batch dimension
 
