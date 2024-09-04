@@ -13,17 +13,23 @@ import os
 
 
 # Define the URL to download the model file
-MODEL_URL = 'https://github.com/UmerElsaharty/Teeth-Image-Classification-Using-MobileNet/blob/f8e98c9bc4b061c48567dfdce67a76272f4a291f/apps.py'
-MODEL_PATH = 'F:/intern/second week/model.h5'
+
+# Use the raw GitHub URL
+MODEL_URL = 'https://github.com/UmerElsaharty/Teeth-Image-Classification-Using-MobileNet/raw/main/model.h5'
+MODEL_PATH = 'model.h5'  # Adjust the path as needed for your deployment environment
+
+# Ensure the directory exists
+os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
 
 # Download the model file if it doesn't exist locally
 if not os.path.exists(MODEL_PATH):
     response = requests.get(MODEL_URL)
-    with open(MODEL_URL, 'wb') as file:
+    with open(MODEL_PATH, 'wb') as file:
         file.write(response.content)
 
 # Load the model
 model = load_model(MODEL_PATH)
+
 
 # Define class names for the model
 class_names = np.array(['CaS', 'CoS', 'Gum', 'MC', 'OC', 'OLP', 'OT'])  
