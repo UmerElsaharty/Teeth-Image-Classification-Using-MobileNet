@@ -23,7 +23,7 @@ if not os.path.exists(MODEL_PATH):
         file.write(response.content)
 
 # Load the model
-model = load_model(MODEL_PATH)
+model = load_model(MODEL_URL)
 
 # Define class names for the model
 class_names = np.array(['CaS', 'CoS', 'Gum', 'MC', 'OC', 'OLP', 'OT'])  
