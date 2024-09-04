@@ -74,7 +74,7 @@ if uploaded_files:
                 st.warning(f"The model is not confident about the classification for {uploaded_file.name}. Please try a different image.")
                 predicted_class = "Uncertain"
             
-            predictions.append((uploaded_file.name, predicted_class, confidence))
+            predictions.append((uploaded_file.name, predicted_class))
 
         # Display the result for each image
         st.success(f"Predicted Class for {uploaded_file.name}: **{predicted_class}**")
