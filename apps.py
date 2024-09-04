@@ -37,7 +37,8 @@ class_names = np.array(['CaS', 'CoS', 'Gum', 'MC', 'OC', 'OLP', 'OT'])
 
 # Streamlit app title and description
 st.title("🦷 Enhanced Dental Diseases Image classification app 🦷")
-st.markdown("Upload one or more images from the **same directory** to classify them using a pre-trained deep learning model.")
+st.markdown("Upload one or more images from the **same directory** to classify them .")
+st.markdown("The app may recognize other images as a teeth disease so the app is not always accurate.")
 
 # Sidebar for displaying images
 st.sidebar.title("Uploaded Images")
@@ -71,7 +72,12 @@ if uploaded_files:
             
             # Check if all confidence scores are low
             if all(score < low_confidence_threshold for score in confidence_scores):
-                st.warning(f"The model is not confident about the classification for {uploaded_file.name}. Please try a different image.")
+                st.warning(f"The model is not confident about the classification for {uploaded_file.name}")
+                st.warning(f"Consider these steps for better results: 
+                1:Upload a clear image 
+                2:Make sure that the image's format is jpg,png and jpeg
+                 ")
+                
                 predicted_class = "Uncertain"
             
             predictions.append((uploaded_file.name, predicted_class))
