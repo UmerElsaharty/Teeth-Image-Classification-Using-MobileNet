@@ -19,7 +19,7 @@ MODEL_PATH = 'https://github.com/UmerElsaharty/Teeth-Image-Classification-Using-
 # Download the model file if it doesn't exist locally
 if not os.path.exists(MODEL_PATH):
     response = requests.get(MODEL_URL)
-    with open(MODEL_PATH, 'wb') as file:
+    with open(MODEL_URL, 'wb') as file:
         file.write(response.content)
 
 # Load the model
