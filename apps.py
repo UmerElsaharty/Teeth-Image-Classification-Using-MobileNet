@@ -14,7 +14,7 @@ import os
 
 # Define the URL to download the model file
 MODEL_URL = 'https://github.com/UmerElsaharty/Teeth-Image-Classification-Using-MobileNet/blob/main/model.h5'
-MODEL_PATH = 'models/model.h5'
+MODEL_PATH = 'F:/intern/second week/model.h5'
 
 # Download the model file if it doesn't exist locally
 if not os.path.exists(MODEL_PATH):
