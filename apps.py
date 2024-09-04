@@ -77,7 +77,7 @@ if uploaded_files:
             predictions.append((uploaded_file.name, predicted_class))
 
         # Display the result for each image
-        st.success(f"Predicted Class for {uploaded_file.name}: **{predicted_class}**")
+        st.success(f"Predicted Class for {uploaded_file.name}: **{predicted_class}** {confidence}")
 
     # Convert predictions to a DataFrame
     predictions_df = pd.DataFrame(predictions, columns=["Image Name", "Predicted Class"])
