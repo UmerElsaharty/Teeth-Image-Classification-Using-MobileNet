@@ -78,7 +78,7 @@ if uploaded_files:
     # Download button for the DataFrame as an Excel file
     st.write("### Download Predictions")
     towrite = BytesIO()
-    predictions_df.to_excel(towrite, index=False, engine='openpyxl')
+    predictions_df.to_excel(towrite, index=False, engine='xlsxwriter')
     towrite.seek(0)
     st.download_button(
         label="Download predictions as Excel",
